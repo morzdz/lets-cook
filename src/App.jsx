@@ -1,5 +1,5 @@
 import NavBar from './assets/components/NavBar/NavBar';
-import Card from './assets/components/Card/Card';
+import DisplayRecipes from './assets/components/Recipes/DisplayRecipes';
 import './App.css';
 
 function App() {
@@ -7,7 +7,7 @@ function App() {
   return (
     <>
       <NavBar />
-      <Card />
+      <DisplayRecipes />
     </>
   )
 }
