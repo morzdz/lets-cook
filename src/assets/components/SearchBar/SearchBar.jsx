@@ -1,31 +1,6 @@
-import { useState } from 'react';
-import data from '../../data/recettes.json';
-import 'tailwindcss/tailwind.css';
 import { MagnifyingGlassIcon } from '@heroicons/react/24/outline';
 
-const SearchBar = () => {
-    const [searchTerm, setSearchTerm] = useState("");
-    const [filteredRecipe, setFilteredRecipe] = useState([]);
-
-    const handleSearch = (term) => {
-        // Vérification si le terme de recherche est vide
-        if (!term.trim()) {
-            setFilteredRecipe([]);
-            return;
-        }
-
-        // Filtrage des recettes en fonction du titre et mise à jour de l'état filteredRecipe
-        const filteredList = data.filter((recipe) => recipe.category.toLowerCase().includes(term.toLowerCase()));
-        setFilteredRecipe(filteredList);
-        console.log(filteredRecipe);
-    }
-
-    const handleChange = (event) => {
-        const term = event.target.value;
-        setSearchTerm(term); // Mise à jour du terme de recherche
-        handleSearch(term); // Appel de la fonction de recherche avec le nouveau terme
-    }
-
+const SearchBar = ({ handleChange, searchTerm }) => {
     return (
         <label className="relative block">
             <span className="sr-only">Search</span>
