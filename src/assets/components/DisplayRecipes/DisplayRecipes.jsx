@@ -1,6 +1,7 @@
 import { useState } from 'react';
 import Card from "../Card/Card"
 import SearchBar from "../SearchBar/SearchBar"
+import FavButton from '../FavButton/FavButton';
 import Reset from '../Reset/Reset';
 import data from '../../data/recettes.json';
 import 'tailwindcss/tailwind.css';
@@ -42,6 +43,7 @@ const DisplayRecipes = () => {
                         <h2 className="my-4 text-6xl text-theme1-main">Let's Cook</h2>
                         <div className="flex items-center gap-4 mt-8 mb-2">
                         <SearchBar handleChange={handleChange} handleSearch={handleSearch} searchTerm={searchTerm}/>
+                        <FavButton />
                         <Reset handleReset={handleReset}/>
                         </div>
                     </div>
