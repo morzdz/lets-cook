@@ -1,5 +1,6 @@
-import NavBar from './assets/components/NavBar/NavBar';
+import NavBar from './assets/components/Header/NavBar';
 import DisplayRecipes from './assets/components/Recipes/DisplayRecipes';
+import Footer from './assets/components/Footer/Footer';
 import './App.css';
 
 function App() {
@@ -8,6 +9,7 @@ function App() {
     <>
       <NavBar />
       <DisplayRecipes />
+      <Footer />
     </>
   )
 }
