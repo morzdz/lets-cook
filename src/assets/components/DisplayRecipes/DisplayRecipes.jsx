@@ -1,15 +1,19 @@
 import { useState } from 'react';
-import Card from "../Card/Card"
-import SearchBar from "../SearchBar/SearchBar"
+import Card from '../Card/Card';
+import SearchBar from '../SearchBar/SearchBar';
 import FavButton from '../FavButton/FavButton';
 import Reset from '../Reset/Reset';
 import data from '../../data/recettes.json';
+import FavoriteRecipes from '../FavoritesRecipes/FavoritesRecipes';
 import 'tailwindcss/tailwind.css';
 
 const DisplayRecipes = () => {
-
-    const [searchTerm, setSearchTerm] = useState("");
+    const [searchTerm, setSearchTerm] = useState('');
     const [filteredRecipe, setFilteredRecipe] = useState([]);
+    const [showFavorites, setShowFavorites] = useState(false);
+    const [favorites, setFavorites] = useState([]); // État pour les recettes favorites
+
+
 
     const handleSearch = (term) => {
         // Vérification si le terme de recherche est vide
@@ -21,7 +25,6 @@ const DisplayRecipes = () => {
         // Filtrage des recettes en fonction du titre et mise à jour de l'état filteredRecipe
         const filteredList = data.filter((recipe) => recipe.category.toLowerCase().includes(term.toLowerCase()));
         setFilteredRecipe(filteredList);
-        console.log(filteredRecipe);
     }
 
     const handleChange = (event) => {
@@ -31,8 +34,15 @@ const DisplayRecipes = () => {
     }
 
     const handleReset = () => {
-        console.log("Reset button clicked");
-        setSearchTerm(""); // Update the searchTerm state in the parent component
+        setSearchTerm(""); // Mise à jour du terme de recherche
+    };
+
+    const addToFav = (id) => {
+        if (!favorites.includes(id)) {
+            setFavorites([...favorites, id]);
+        } else {
+            setFavorites(favorites.filter(fav => fav !== id));
+        }
     };
 
     return (
@@ -42,9 +52,9 @@ const DisplayRecipes = () => {
                     <div className="mx-auto max-w-2xl lg:mx-0">
                         <h2 className="my-4 text-6xl text-theme1-main">Let's Cook</h2>
                         <div className="flex items-center gap-4 mt-8 mb-2">
-                        <SearchBar handleChange={handleChange} handleSearch={handleSearch} searchTerm={searchTerm}/>
-                        <FavButton />
-                        <Reset handleReset={handleReset}/>
+                            <SearchBar handleChange={handleChange} handleSearch={handleSearch} searchTerm={searchTerm}/>
+                            <FavButton setShowFavorites={setShowFavorites} showFavorites={showFavorites} />
+                            <Reset handleReset={handleReset}/>
                         </div>
                     </div>
                     <div>
@@ -55,43 +65,52 @@ const DisplayRecipes = () => {
                         )}
                     </div>
                     <div className="mx-auto mt-10 grid max-w-2xl grid-cols-1 gap-x-8 gap-y-16 lg:mx-0 lg:max-w-none lg:grid-cols-3">
-                        {filteredRecipe.length > 0 && searchTerm.length > 0 ? (
-                            // Affichage des recettes filtrées
-                            filteredRecipe.map((post) => (
-                                <Card 
-                                    key={post.id} 
-                                    id={post.id} 
-                                    image={post.imageUrl}
-                                    title={post.title}
-                                    author={post.author}
-                                    date={post.date}
-                                    difficulty={post.difficulty}
-                                    category={post.category}
-                                    description={post.description}
-                                />
-                            ))
+                        {showFavorites ? (
+                            // Affichage des recettes favorites
+                            <FavoriteRecipes favorites={favorites} addToFav={addToFav} />
                         ) : (
-                            // Affichage de toutes les recettes
-                            data.map((post) => (
-                                <Card 
-                                    key={post.id} 
-                                    id={post.id} 
-                                    image={post.imageUrl}
-                                    title={post.title}
-                                    author={post.author}
-                                    date={post.date}
-                                    difficulty={post.difficulty}
-                                    category={post.category}
-                                    description={post.description}
-                                />
-                            ))
+                            // Affichage des recettes filtrées ou toutes les recettes normales
+                            filteredRecipe.length > 0 && searchTerm.length > 0 ? (
+                                // Affichage des recettes filtrées
+                                filteredRecipe.map((post) => (
+                                    <Card 
+                                        key={post.id} 
+                                        id={post.id} 
+                                        image={post.imageUrl}
+                                        title={post.title}
+                                        author={post.author}
+                                        date={post.date}
+                                        difficulty={post.difficulty}
+                                        category={post.category}
+                                        description={post.description}
+                                        addToFav={addToFav} // Passer la fonction addToFav comme prop
+                                        favorites={favorites} // Passer les favoris comme prop
+                                    />
+                                ))
+                            ) : (
+                                // Affichage de toutes les recettes
+                                data.map((post) => (
+                                    <Card 
+                                        key={post.id} 
+                                        id={post.id} 
+                                        image={post.imageUrl}
+                                        title={post.title}
+                                        author={post.author}
+                                        date={post.date}
+                                        difficulty={post.difficulty}
+                                        category={post.category}
+                                        description={post.description}
+                                        addToFav={addToFav} // Passer la fonction addToFav comme prop
+                                        favorites={favorites} // Passer les favoris comme prop
+                                    />
+                                ))
+                            )
                         )}
                     </div>
                 </div>
             </div>
         </>
     )
-    
 }
 
 export default DisplayRecipes
