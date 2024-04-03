@@ -1,5 +1,4 @@
 import data from '../../data/recettes.json';
-import 'tailwindcss/tailwind.css';
 import { TagIcon, StarIcon } from '@heroicons/react/24/solid'
 
 const Card = ({ id, image, title, author, date, difficulty, category, description  }) => {

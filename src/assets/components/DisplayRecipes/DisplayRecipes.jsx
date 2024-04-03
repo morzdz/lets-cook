@@ -1,6 +1,7 @@
 import { useState } from 'react';
 import Card from "../Card/Card"
 import SearchBar from "../SearchBar/SearchBar"
+import Reset from '../Reset/Reset';
 import data from '../../data/recettes.json';
 import 'tailwindcss/tailwind.css';
 
@@ -28,13 +29,21 @@ const DisplayRecipes = () => {
         handleSearch(term); // Appel de la fonction de recherche avec le nouveau terme
     }
 
+    const handleReset = () => {
+        console.log("Reset button clicked");
+        setSearchTerm(""); // Update the searchTerm state in the parent component
+    };
+
     return (
         <>
             <div className="bg-white py-12 sm:py-12">
                 <div className="mx-auto max-w-7xl px-6 lg:px-8">
                     <div className="mx-auto max-w-2xl lg:mx-0">
                         <h2 className="my-4 text-6xl text-theme1-main">Let's Cook</h2>
+                        <div className="flex items-center gap-4 mt-8 mb-2">
                         <SearchBar handleChange={handleChange} handleSearch={handleSearch} searchTerm={searchTerm}/>
+                        <Reset handleReset={handleReset}/>
+                        </div>
                     </div>
                     <div>
                         {searchTerm === "" ? (
