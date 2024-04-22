@@ -9,7 +9,7 @@ Pour utiliser "Let's Cook" localement, suivez ces étapes :
 1. Assurez-vous d'avoir Node.js installé sur votre ordinateur.
 2. Clonez ce dépôt GitHub sur votre machine :
    ```
-   git clone https://github.com/votre-utilisateur/lets-cook.git
+   git clone https://github.com/morzdz/lets-cook
    ```
 3. Accédez au répertoire du projet :
    ```
