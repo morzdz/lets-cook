@@ -1,8 +1,41 @@
-# React + Vite
+# Let's Cook
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+"Let's Cook" est une application Web qui vous permet d'explorer une variété de recettes et de trouver des inspirations pour vos prochains repas. Que vous soyez un chef expérimenté à la recherche de nouvelles idées ou un débutant cherchant des recettes simples à suivre, "Let's Cook" vous propose une collection diversifiée de recettes pour satisfaire tous les goûts.
 
-Currently, two official plugins are available:
+## Installation
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+Pour utiliser "Let's Cook" localement, suivez ces étapes :
+
+1. Assurez-vous d'avoir Node.js installé sur votre ordinateur.
+2. Clonez ce dépôt GitHub sur votre machine :
+   ```
+   git clone https://github.com/votre-utilisateur/lets-cook.git
+   ```
+3. Accédez au répertoire du projet :
+   ```
+   cd lets-cook
+   ```
+4. Installez les dépendances avec npm ou yarn :
+   ```
+   npm install
+   ```
+   ou
+   ```
+   yarn install
+   ```
+5. Lancez l'application :
+   ```
+   npm start
+   ```
+   ou
+   ```
+   yarn start
+   ```
+
+## Utilisation
+
+Une fois l'application lancée, vous pouvez naviguer à travers les différentes recettes en utilisant la barre de recherche pour filtrer les résultats en fonction de vos préférences. Vous pouvez également marquer vos recettes préférées en cliquant sur l'icône de cœur.
+
+## Site déployé
+
+Vous pouvez accéder au site déployé de "Let's Cook" en suivant ce lien : [Let's Cook](lien_vers_le_site_deploye)
