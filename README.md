@@ -34,8 +34,8 @@ Pour utiliser "Let's Cook" localement, suivez ces étapes :
 
 ## Utilisation
 
-Une fois l'application lancée, vous pouvez naviguer à travers les différentes recettes en utilisant la barre de recherche pour filtrer les résultats en fonction de vos préférences. Vous pouvez également marquer vos recettes préférées en cliquant sur l'icône de cœur.
+Une fois l'application lancée, vous pouvez naviguer à travers les différentes recettes en utilisant la barre de recherche pour filtrer les résultats en fonction de vos préférences. Vous pouvez également marquer vos recettes préférées en cliquant sur l'icône de cœur(à fixer).
 
 ## Site déployé
 
-Vous pouvez accéder au site déployé de "Let's Cook" en suivant ce lien : [Let's Cook](lien_vers_le_site_deploye)
+Vous pouvez accéder au site déployé de "Let's Cook" en suivant ce lien : [Let's Cook](https://lets-cook-opal.vercel.app/)
