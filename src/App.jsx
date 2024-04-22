@@ -1,4 +1,4 @@
-import NavBar from './assets/components/Header/NavBar';
+import NavBar from './assets/components/NavBar/NavBar';
 import DisplayRecipes from './assets/components/DisplayRecipes/DisplayRecipes';
 import Footer from './assets/components/Footer/Footer';
 import './App.css';
