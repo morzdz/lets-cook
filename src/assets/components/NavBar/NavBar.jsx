@@ -36,7 +36,7 @@ export default function NavBar() {
                     <div className="flex flex-shrink-0 items-center">
                     <img
                         className="h-8 w-auto"
-                        src="src\assets\images\favicon.svg"
+                        src="src/assets/images/favicon.svg"
                         alt="Let's Cook"
                     />
                     </div>
@@ -76,7 +76,7 @@ export default function NavBar() {
                         <span className="sr-only">Open user menu</span>
                         <img
                             className="h-8 w-8 rounded-full"
-                            src="src\assets\images\user-icon-palecholder.jpg"
+                            src="src/assets/images/user-icon-palecholder.jpg"
                             alt="photo de profile"
                         />
                         </Menu.Button>
