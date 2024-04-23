@@ -7,13 +7,13 @@ const Footer = () => {
         <>
             <footer>
                 <div>
-                    <img src="src\assets\images\footer.svg" alt="footer.svg" />
+                    <img src="src/assets/images/footer.svg" alt="footer.svg" />
                 </div>
                 <div className="min-h-80 bg-theme1-main relative">
                     <XMarkIcon className="cursor-pointer absolute top-5 right-5 text-white w-6" />
                     <div className="flex flex-row flex-wrap mx-auto items-center gap-8 py-8 max-w-5xl">
                         <div className="flex-auto w-32 p-4">
-                            <img src="src\assets\images\download.jpg" alt="download.jpg" />
+                            <img src="src/assets/images/download.jpg" alt="download.jpg" />
                         </div>
                         <div className="flex flex-col flex-auto w-96 text-white gap-4 px-4">
                             <h2 className="text-2xl font-bold">Téléchargez Notre Livre de Recettes Gratuit !</h2>

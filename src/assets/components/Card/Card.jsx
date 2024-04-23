@@ -26,7 +26,7 @@ const Card = ({ id, image, title, author, date, difficulty, category, descriptio
             </div>
             <div className="mx-6 mb-4">
                 <div className="relative mt-4 flex items-center gap-x-4">
-                    <img src="src\assets\images\user-icon-palecholder.jpg" alt={author} className="h-10 w-10 rounded-full bg-gray-50" />
+                    <img src="src/assets/images/user-icon-palecholder.jpg" alt={author} className="h-10 w-10 rounded-full bg-gray-50" />
                     <div className="text-sm leading-6">
                     <p className="font-semibold text-gray-900">
                         <span className="absolute inset-0" />
