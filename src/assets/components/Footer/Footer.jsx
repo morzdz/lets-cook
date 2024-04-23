@@ -1,4 +1,5 @@
 import { XMarkIcon } from '@heroicons/react/24/solid'
+import footerImg from src/assets/images/footer.svg
 
 const Footer = () => {
     console.log('loaded');
@@ -7,7 +8,7 @@ const Footer = () => {
         <>
             <footer>
                 <div>
-                    <img src="src/assets/images/footer.svg" alt="footer.svg" />
+                    <img src={footerImg} alt="footer.svg" />
                 </div>
                 <div className="min-h-80 bg-theme1-main relative">
                     <XMarkIcon className="cursor-pointer absolute top-5 right-5 text-white w-6" />
